@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import ContentSection from "~/components/content-section.astro";
+import ShowcaseCard from "~/components/showcase-card.astro";
+import ModeLogo from "../assets/logo-mode-on.png";
+import {Image} from "astro:assets";
+
+const events = [
+  {
+    image: "/cormillot.png",
+    title: "Boda Dr. Cormillot"
+  },
+  {
+    image: "/velez.jpg",
+    title: "110 Años de Vélez"
+  },
+  {
+    image: "/padua.jpg",
+    title: "Fiestas Padua 2022"
+  },
+
+]
+---
+
+<section id="showcase">
+
+  <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl">
+    Algunos shows
+  </h2>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 m-6">
+      {events.map((site) =>
+        <div><p class="max-w-xl text-center font-extrabold text-xl">{site.title}</p>
+          <Image
+              class="w-64 h-64 rounded-xl m-auto mt-4"
+              src={site.image}
+              width="256"
+                height="256"
+              alt={site.title}
+          />
+        </div>
+      )}
+    </div>
+    <p class="text-sm px-4 italic mb-4">
+      Y otros como; Michael Page, Kongo, Madero Tango, La Rural, Golden Center, Club Lucille, Hotel Sheraton, Municipalidad de Merlo, Banco Santander, etc.
+    </p>
+</ContentSection>

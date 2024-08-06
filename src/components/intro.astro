@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import {Image} from "astro:assets";
+import ModeLogo from '~/assets/logo-mode-on.png';
+---
+
+<section id="intro"
+         style="background-image: url('/fondo.jpg');"
+         class="flex scroll-mt-24 flex-col items-center space-y-24 px-8 h-screen py-6 justify-center bg-no-repeat bg-cover">
+  <Image
+      class="w-64 h-64 rounded-full mb-16"
+      src={ModeLogo}
+      widths={[450, 800, 1200]}
+      alt="Logo"
+  />
+  <p class="max-w-xl text-center font-extrabold text-2xl !mt-0">
+    Hace que tu evento sea
+  </p>
+
+  <p class="max-w-xl text-center font-extrabold text-2xl !mt-0">
+      <span class="text-primary text-6xl italic	">UNA FIESTA!</span>
+  </p>
+   <div class="flex gap-6 flex-col !mt-4">
+    <a
+      href="https://api.whatsapp.com/send/?phone=%2B5491159732962&text=Hola%2C+quería+consultar+por+presupuesto+para+un+show&type=phone_number&app_absent=0"
+      class="flex items-center justify-center gap-3 border-2 rounded-2xl border-current px-4 py-2"
+    >
+      <Icon name="mdi:whatsapp" class="size-8" />
+      <span>Contactanos!</span>
+    </a>
+       <a
+               href="https://www.instagram.com/modeonbanda/"
+               class="flex items-center justify-center gap-3 border-2 rounded-2xl border-current px-4 py-2"
+       >
+           <Icon name="mdi:instagram" class="size-8" />
+           <h1>Conocenos!</h1>
+       </a>
+  </div>
+</section>
